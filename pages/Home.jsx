@@ -1,4 +1,6 @@
 import React from "react";
+import { FaGraduationCap, FaHeadset, FaVideo } from "react-icons/fa";
+import { GiRibbonMedal } from "react-icons/gi";
 
 function Home() {
   return (
@@ -18,6 +20,44 @@ function Home() {
         </div>
         <div>
           <img src="https://codeit.com.np/storage/01KD627JZZ3XY67DDAAYY0RPMQ.avif" width={500} alt="" />
+        </div>
+      </div>
+      <div className="p-20 flex justify-between">
+        <div className="flex items-center space-x-5 shadow-2xl">
+          <div>
+            <FaGraduationCap color="green" size={70}/>
+          </div>
+          <div className="text-xl">
+              <p className="font-bold">5K +</p>
+              <p>Students Trained</p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-5 shadow-2xl">
+          <div>
+            <FaHeadset color="green" size={70} />
+          </div>
+          <div className="text-xl">
+              <p className="font-bold">Lifetime</p>
+              <p>Access & support</p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-5 shadow-2xl">
+          <div>
+            <FaVideo color="green" size={70} />
+          </div>
+          <div className="text-xl">
+              <p className="font-bold">Live &</p>
+              <p>Recorded Video</p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-5 shadow-2xl">
+          <div>
+            <GiRibbonMedal color="green" size={70} />
+          </div>
+          <div className="text-xl">
+              <p className="font-bold">Certificate +</p>
+              <p>Internship</p>
+          </div>
         </div>
       </div>
     </main>
