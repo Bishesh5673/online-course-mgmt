@@ -10,7 +10,7 @@ function Footer() {
       <div className="px-24 flex gap-x-28">
         <div className="pr-[16px] pb-[16px] w-[408px] h-[192px] space-y-3">
           <NavLink to="/" className="flex items-center gap-x-2">
-            <img src='' width={30} alt="" />
+            <img src='https://codeit.com.np/storage/01KE9MC5P5YCRYWVW7HQ7JVDEK.png' width={30} alt="" />
             <p className="text-2xl text-[#0C6967] font-bold">momos</p>
           </NavLink>
           <p className="text-[16px] text-[#6B788E]">
