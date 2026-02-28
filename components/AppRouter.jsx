@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import AboutUs from '../pages/AboutUs'
 import Contact from '../pages/Contact'
 import Courses from '../pages/Courses'
+import CourseDetail from '../pages/CourseDetail'
 
 function AppRouter() {
   return (
@@ -12,8 +13,7 @@ function AppRouter() {
         <Route path='/aboutUs' element={<AboutUs/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/courses' element={<Courses/>} />
-
-
+        <Route path='/courseDetail' element={<CourseDetail/>} />
       
     </Routes>
   )
