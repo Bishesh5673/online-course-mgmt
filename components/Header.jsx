@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
+import { useContext } from "react";
 
 function Header() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  const navigate = useNavigate();
+  const { state, logout } = useContext(AuthContext);
+  const { userInfo } = state;
+  const userExist = userInfo?.user;
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -30,13 +37,12 @@ function Header() {
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex justify-between items-center px-8 md:px-20 py-5 
-      bg-black/80 backdrop-blur-md text-white shadow-lg">
-
+      <div
+        className="flex justify-between items-center px-8 md:px-20 py-5  
+      bg-black/80 backdrop-blur-md text-white shadow-lg"
+      >
         {/* Logo */}
-        <div className="text-2xl font-bold tracking-wide">
-          CodeAcademy
-        </div>
+        <div className="text-2xl font-bold tracking-wide">CodeAcademy</div>
 
         {/* Navigation Links */}
         <nav className="space-x-8 text-lg font-medium">
@@ -84,6 +90,76 @@ function Header() {
             Contact
           </NavLink>
         </nav>
+
+        <div className="relative group">
+  {/* Avatar */}
+  {userExist ? (
+    <img
+      className="h-11 w-11 rounded-full object-cover cursor-pointer 
+                 ring-2 ring-green-500 hover:scale-105 
+                 transition duration-300"
+      src={`http://localhost:9000/image/${userExist?.image}`}
+      alt="user"
+    />
+  ) : (
+    <img
+      className="h-11 w-11 rounded-full cursor-pointer 
+                 ring-2 ring-gray-400 hover:scale-105 
+                 transition duration-300"
+      src="https://cdn-icons-png.flaticon.com/512/219/219983.png"
+      alt="default user"
+    />
+  )}
+
+  {/* Dropdown */}
+  <div
+    className="absolute left-0 mt-3 w-36 
+               bg-white text-black 
+               rounded-xl shadow-xl 
+               opacity-0 invisible 
+               group-hover:opacity-100 group-hover:visible 
+               transition-all duration-300 
+               flex flex-col p-4 space-y-3"
+  >
+    {userExist ? (
+      <>
+        <NavLink
+          className="hover:text-green-600 transition"
+          to="/profile"
+        >
+          Profile
+        </NavLink>
+
+        <button
+          className="text-left hover:text-red-500 transition"
+          onClick={() => {
+            logout();
+            navigate("/login");
+          }}
+        >
+          Logout
+        </button>
+      </>
+    ) : (
+      <>
+        <NavLink
+          className="hover:text-green-600 transition"
+          to="/login"
+        >
+          Login
+        </NavLink>
+
+        <NavLink
+          className="hover:text-green-600 transition"
+          to="/register"
+        >
+          Register
+        </NavLink>
+      </>
+    )}
+  </div>
+</div>
+
       </div>
     </header>
   );

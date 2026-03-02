@@ -31,7 +31,7 @@ function Home() {
   <main className="font-sans">
 
     {/* HERO SECTION */}
-    <section className="bg-gradient-to-r from-green-500 to-emerald-600 py-20 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="bg-gradient-to-r from-green-500 to-emerald-600  py-20 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
       
       <div className="max-w-xl space-y-6 text-white">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -49,7 +49,7 @@ function Home() {
       <div>
         <img
           src="https://codeit.com.np/storage/01KD627JZZ3XY67DDAAYY0RPMQ.avif"
-          className="rounded-3xl shadow-2xl w-full max-w-md"
+          className="rounded-3xl shadow-2xl w-full mt-10 max-w-md"
           alt="Training"
         />
       </div>
