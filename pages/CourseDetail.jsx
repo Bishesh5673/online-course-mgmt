@@ -1,9 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function CourseDetail() {
   const { state } = useLocation();
-  const { title, description, image, level, price, date } = state;
+  const navigate = useNavigate();
+  const { title, description, image, level, price, date, _id } = state;
 
   return (
     <main className="bg-gray-50 min-h-screen pt-24 px-6 md:px-20 py-16">
@@ -59,7 +60,11 @@ function CourseDetail() {
               </span>
             </div>
 
-            <button className="w-full bg-black text-white py-3 rounded-xl text-lg hover:bg-gray-800 transition mt-4">
+            <button 
+            onClick={() =>
+                navigate("/enroll", { state: { courseId: _id, title, price, image } })
+              }
+            className="w-full bg-black text-white py-3 rounded-xl text-lg hover:bg-gray-800 transition mt-4">
               Enroll Now
             </button>
 

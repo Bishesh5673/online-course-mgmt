@@ -130,6 +130,13 @@ function Header() {
           Profile
         </NavLink>
 
+        <NavLink
+          className="hover:text-green-600 transition"
+          to="/dashboard"
+        >
+          Dashboard
+        </NavLink>
+
         <button
           className="text-left hover:text-red-500 transition"
           onClick={() => {

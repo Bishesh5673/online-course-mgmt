@@ -8,6 +8,10 @@ import CourseDetail from "../pages/CourseDetail";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
+import EnrollCourse from "../pages/EnrollCourse";
+import Dashboard from "../pages/Dashboard";
+import Payment from "../pages/Payment";
+import PaymentSuccess from "../pages/PaymentSuccess";
 
 function AppRouter() {
   return (
@@ -20,6 +24,10 @@ function AppRouter() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/enroll" element={<EnrollCourse />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/payment" element={<Payment />} />
+      <Route path="/payment-success" element={<PaymentSuccess />} />
     </Routes>
   );
 }

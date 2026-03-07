@@ -42,6 +42,14 @@ export const AuthProvider = ({ children }) => {
       });
       res = await res.json();
       dispatch({ type: "login", payload: res });
+      if (res.success) {
+        // ✅ STORE USER ID HERE
+        localStorage.setItem("userId", res.user._id);
+
+        alert("Login successful");
+      } else {
+        alert(res.message);
+      }
       navigate("/");
       // alert(res.message);
     } catch (error) {
