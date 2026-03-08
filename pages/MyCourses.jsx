@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const baseUrl = "http://127.0.0.1:9000/api/enroll";
 
-function Dashboard() {
+function MyCourses() {
   const [enrollments, setEnrollments] = useState([]);
   const userId = localStorage.getItem("userId");
 
@@ -41,4 +41,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default MyCourses;

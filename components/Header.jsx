@@ -123,12 +123,6 @@ function Header() {
   >
     {userExist ? (
       <>
-        <NavLink
-          className="hover:text-green-600 transition"
-          to="/profile"
-        >
-          Profile
-        </NavLink>
 
         <NavLink
           className="hover:text-green-600 transition"
@@ -137,15 +131,6 @@ function Header() {
           Dashboard
         </NavLink>
 
-        <button
-          className="text-left hover:text-red-500 transition"
-          onClick={() => {
-            logout();
-            navigate("/login");
-          }}
-        >
-          Logout
-        </button>
       </>
     ) : (
       <>

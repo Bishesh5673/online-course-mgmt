@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
       if (res.success) {
         // ✅ STORE USER ID HERE
         localStorage.setItem("userId", res.user._id);
-
+        
         alert("Login successful");
       } else {
         alert(res.message);
