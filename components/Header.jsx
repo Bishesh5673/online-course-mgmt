@@ -42,7 +42,13 @@ function Header() {
       bg-black/80 backdrop-blur-md text-white shadow-lg"
       >
         {/* Logo */}
-        <div className="text-2xl font-bold tracking-wide">CodeAcademy</div>
+        <div 
+        onClick={()=>{
+          navigate("/")
+        }}
+        className="text-2xl font-bold tracking-wide flex hover:cursor-pointer ">
+          <img src='https://codeit.com.np/storage/01KE9MC5P5YCRYWVW7HQ7JVDEK.png' width={150} alt="" />
+          </div>
 
         {/* Navigation Links */}
         <nav className="space-x-8 text-lg font-medium">

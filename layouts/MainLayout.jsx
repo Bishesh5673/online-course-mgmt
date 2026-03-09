@@ -7,7 +7,7 @@ function MainLayout() {
     <>
       <Header />
 
-      <Outlet />
+      <Outlet  classname=" mt-15 bg-gray-300"/>
 
       <Footer />
     </>

@@ -43,7 +43,7 @@ function Courses() {
     );
   }
   return (
-    <main className="min-h-screen bg-gray-50 px-6 mt-15 md:px-20 py-16">
+    <main className="min-h-screen bg-gray-300 px-6 mt-15 md:px-20 py-16">
       {/* Page Title */}
       <div className="text-center mb-14">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -62,14 +62,14 @@ function Courses() {
           placeholder="Search courses..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full md:w-1/2 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+          className="w-full md:w-1/2 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
         />
 
         {/* Filter */}
         <select
           value={levelFilter}
           onChange={(e) => setLevelFilter(e.target.value)}
-          className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+          className="border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
         >
           <option value="all">All Levels</option>
           <option value="Beginner">Beginner</option>

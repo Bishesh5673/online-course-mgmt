@@ -28,7 +28,7 @@ function Contact() {
 
   return (
     <div>
-      <section className="px-[156px] ">
+      <section className="px-[156px] mt-20 ">
         <div className="text-center  space-x-5 space-y-[8px]">
           <p className="text-[39px] font-bold">
             GET <span className="text-[#D95103]">IN TOUCH</span>
