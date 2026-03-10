@@ -14,7 +14,9 @@ function Courses() {
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
 
-    const matchesLevel = levelFilter === "all" ||  course.level?.toLowerCase() === levelFilter.toLowerCase();
+    const matchesLevel =
+      levelFilter === "all" ||
+      course.level?.toLowerCase() === levelFilter.toLowerCase();
 
     return matchesSearch && matchesLevel;
   });
@@ -55,7 +57,7 @@ function Courses() {
       </div>
 
       {/* Search + Filter */}
-      <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-10">
+      <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-10">
         {/* Search */}
         <input
           type="text"
@@ -106,18 +108,14 @@ function Courses() {
                 src={`http://localhost:9000/image/${item?.image}`}
                 alt={item.title}
               />
-              <div className="p-6 space-y-3">
-                <h2 className="text-xl font-bold line-clamp-2">{item.title}</h2>
-
-                <span className="text-sm bg-gray-100 px-3 py-1 rounded-full">
-                {item.level}
-              </span>
-
-                <p className="text-green-600 font-semibold text-lg">
+              <div className="p-6 pb-0  space-y-3">
+                <h2 className="text-2xl font-bold line-clamp-2">{item.title}</h2>
+              </div>
+              <div className="flex p-6 items-center justify-between ">
+                <p className="text-green-600 font-semibold text-2xl">
                   Rs. {item.price}
                 </p>
-
-                <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
+                <button className=" bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition">
                   View Details
                 </button>
               </div>

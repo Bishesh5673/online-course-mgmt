@@ -7,7 +7,10 @@ function MainLayout() {
     <>
       <Header />
 
-      <Outlet  classname=" mt-15 bg-gray-300"/>
+      <div className="min-h-screen mt-15 ">
+        <Outlet/>
+      </div>
+      
 
       <Footer />
     </>

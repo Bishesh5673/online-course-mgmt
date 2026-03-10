@@ -29,16 +29,16 @@ function Contact() {
   return (
     <div>
       <section className="px-[156px] mt-20 ">
-        <div className="text-center  space-x-5 space-y-[8px]">
+        <div className="text-center   space-y-[1px]">
           <p className="text-[39px] font-bold">
-            GET <span className="text-[#D95103]">IN TOUCH</span>
+            GET IN TOUCH
           </p>
-          <p className="text-[#0C6967] font-bold text-[25px]">
+          <p className="text-gray-600  text-lg">
             Our Friendly Team would love to hear from you
           </p>
         </div>
         <div className="flex">
-          <div className="bg-[#0C6967] mt-4 p-[32px] w-[461px] h-[751px] space-y-[40px] rounded-md text-white">
+          <div className="bg-green-600 mt-4 p-[32px] w-[461px] h-[751px] space-y-[40px] rounded-md text-white">
               <div className="space-y-[15px]">
                 <h5 className="flex items-center gap-[8px] font-bold text-[16px]">
                   <FaLocationPin/> Our Address
@@ -122,9 +122,9 @@ function Contact() {
                 className="h-[56px] w-[528px] p-[16px] border"
               >
                 <option value="">Choose</option>
-                <option value="a">A</option>
-                <option value="b">B</option>
-                <option value="c">C</option>
+                <option value="course inquiry">Course Inquiry</option>
+                <option value="technical support">Technical Support</option>
+                <option value="payment issues">Payment Issues</option>
               </select>
             </label>
             <label htmlFor="email" className="flex flex-col">
@@ -167,7 +167,7 @@ function Contact() {
               onClick={() => {
                 handleSubmit();
               }}
-              className="w-[256px] h-[59px] bg-[#0C6967] rounded-4xl p-[20px] px-[40px] text-white flex items-center justify-center"
+              className="w-[256px] h-[59px] bg-green-600 rounded-4xl p-[20px] px-[40px] text-white flex items-center justify-center"
             >
               Send Message
             </button>

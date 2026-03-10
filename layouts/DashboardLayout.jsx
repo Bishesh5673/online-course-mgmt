@@ -23,17 +23,10 @@ function DashboardLayout() {
       {/* Sidebar */}
       <div className="w-73 bg-orange-500 text-white flex flex-col justify-between ">
         <div className="p-6">
-          <div
-            onClick={() => {
-              navigate("/");
-            }}
-            className="text-2xl font-bold tracking-wide mb-8  flex hover:cursor-pointer "
-          >
-            <img
-              src="https://codeit.com.np/storage/01KE9MC5P5YCRYWVW7HQ7JVDEK.png"
-              width={150}
-              alt=""
-            />
+          <div className="border-b-2 p-4 pt-0 mb-2">
+            <p className="text-3xl font-bold">
+              Student Panel
+            </p>
           </div>
 
           <ul className="space-y-6 text-lg">
@@ -59,7 +52,7 @@ function DashboardLayout() {
 
             <li>
               <Link
-                to="/dashboard/certificates"
+                to="/dashboard"
                 className="flex items-center gap-3 p-3 rounded-lg hover:bg-orange-400"
               >
                 <FaCertificate />
@@ -69,7 +62,7 @@ function DashboardLayout() {
 
             <li>
               <Link
-                to="/dashboard/support"
+                to="/dashboard"
                 className="flex items-center gap-3 p-3 rounded-lg hover:bg-orange-400"
               >
                 <FaHeadset />
@@ -79,7 +72,7 @@ function DashboardLayout() {
 
             <li>
               <Link
-                to="/dashboard/suggestions"
+                to="/dashboard"
                 className="flex items-center gap-3 p-3 rounded-lg hover:bg-orange-400"
               >
                 <FaCommentDots />
@@ -89,7 +82,7 @@ function DashboardLayout() {
 
             <li>
               <Link
-                to="/dashboard/terms"
+                to="/dashboard"
                 className="flex items-center gap-3 p-3 rounded-lg hover:bg-orange-400"
               >
                 <FaFileAlt />
@@ -97,22 +90,40 @@ function DashboardLayout() {
               </Link>
             </li>
 
-            <li>
-              <Link
-                to="/dashboard/profile"
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-orange-400"
-              >
-                <FaUser />
-                Profile
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-10 bg-gray-300 ">
-        <Outlet />
+      <div className="flex-1    bg-gray-300 ">
+        <div className="flex items-center justify-between mb-5 text-white h-20 px-5 bg-black border-b-2">
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="hover:cursor-pointer "
+          >
+            <img
+              src="https://codeit.com.np/storage/01KE9MC5P5YCRYWVW7HQ7JVDEK.png"
+              width={150}
+              alt=""
+            />
+          </div>
+          <div>
+            <Link
+            to="/dashboard/profile"
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-orange-400"
+          >
+            <FaUser />
+            Profile
+          </Link>
+          </div>
+        </div>
+
+        <div className="p-10">
+          <Outlet />
+        </div>
+        
       </div>
     </div>
   );

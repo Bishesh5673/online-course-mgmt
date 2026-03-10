@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { FaPlus } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const baseUrl = "http://127.0.0.1:9000/api/enroll";
 
 function DashboardHome() {
 
   const [count, setCount] = useState(0);
+  const navigate = useNavigate();
   const username = localStorage.getItem("username");
   const userId = localStorage.getItem("userId");
 
@@ -40,6 +43,17 @@ function DashboardHome() {
           <p className="text-3xl mt-3">0</p>
         </div>
 
+      </div>
+
+      <div className="bg-green-500 w-[250px] mt-10 text-xl rounded-xl shadow">
+        <button 
+        onClick={()=>{
+          navigate("/courses");
+        }}
+        className="flex items-center justify-center p-4 gap-x-3">
+          <FaPlus className="text-white " size={30}/>
+          Enroll in a Course
+        </button>
       </div>
 
     </div>

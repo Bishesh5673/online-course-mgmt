@@ -17,6 +17,7 @@ import PaymentSuccess from "../pages/PaymentSuccess";
 
 import DashboardHome from "../pages/DashboardHome";
 import MyCourses from "../pages/MyCourses";
+import Testimonials from "../pages/Testimonials.jsx";
 
 function AppRouter() {
   return (
@@ -30,6 +31,7 @@ function AppRouter() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courseDetail" element={<CourseDetail />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />

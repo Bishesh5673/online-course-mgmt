@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 
 function App() {
   return (
-    <div className='bg-gray-300'>
+    <div className='bg-gray-300 '>
       
       <AppRouter/>
 

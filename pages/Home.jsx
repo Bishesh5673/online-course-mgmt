@@ -84,10 +84,13 @@ function Home() {
     </section>
 
     {/* COURSES SECTION */}
-    <section className="py-20 px-6 md:px-20 bg-gray-300">
-      <h1 className="text-4xl font-bold text-center mb-12">
-        Our Courses
+    <section className="pb-5 px-6 md:px-20 bg-gray-300">
+      <h1 className="text-4xl font-bold text-center mb-2">
+        Learn the Skills Employers Want
       </h1>
+      <p className="text-xl text-gray-600 text-center italic mb-6">
+        Master in-demand technical skills, work on real-world projects, and gain practical experience that companies are actively looking for in today’s job market.
+      </p>
 
       {isLoading ? (
         <div className="text-center text-xl">Loading...</div>
@@ -96,7 +99,7 @@ function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {courses
               ?.sort(() => 0.5 - Math.random())
-              .slice(0, 3)
+              .slice(0, 6)
               .map((item) => (
                 <div
                   key={item._id}
@@ -111,14 +114,17 @@ function Home() {
                     alt={item.title}
                   />
 
-                  <div className="p-6 space-y-2">
-                    <h2 className="text-xl font-bold">
-                      {item.title}
-                    </h2>
-                    <p className="text-green-600 font-semibold text-lg">
-                      Rs. {item.price}
-                    </p>
-                  </div>
+                  <div className="p-6 pb-0  space-y-3">
+                <h2 className="text-2xl font-bold line-clamp-2">{item.title}</h2>
+              </div>
+              <div className="flex p-6 items-center justify-between ">
+                <p className="text-green-600 font-semibold text-2xl">
+                  Rs. {item.price}
+                </p>
+                <button className=" bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition">
+                  View Details
+                </button>
+              </div>
                 </div>
               ))}
           </div>
@@ -138,6 +144,48 @@ function Home() {
         </div>
       )}
     </section>
+
+     <section className="py-20 px-6 md:px-20 bg-gray-300">
+
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
+          <p className="text-xl text-gray-600 text-center italic mb-6">
+            The passionate people behind this learning platform.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+          <div className="text-center">
+            <img
+              src="https://randomuser.me/api/portraits/men/11.jpg"
+              className="w-40 h-40 mx-auto rounded-full mb-6"
+            />
+            <h3 className="font-semibold text-lg">Alex Carter</h3>
+            <p className="text-gray-500">Founder & Instructor</p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="https://randomuser.me/api/portraits/women/12.jpg"
+              className="w-40 h-40 mx-auto rounded-full mb-6"
+            />
+            <h3 className="font-semibold text-lg">Sophia Brown</h3>
+            <p className="text-gray-500">Frontend Instructor</p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="https://randomuser.me/api/portraits/men/13.jpg"
+              className="w-40 h-40 mx-auto rounded-full mb-6"
+            />
+            <h3 className="font-semibold text-lg">Michael Chen</h3>
+            <p className="text-gray-500">Backend Instructor</p>
+          </div>
+
+        </div>
+
+      </section>
   </main>
 );
 
