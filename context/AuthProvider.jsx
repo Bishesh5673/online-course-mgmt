@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useReducer } from "react";
 import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Bounce, toast } from "react-toastify";
 export const AuthContext = createContext();
 const baseUrl = "http://localhost:9000/api/user";
 const initialState = {
@@ -45,10 +46,32 @@ export const AuthProvider = ({ children }) => {
       if (res.success) {
         // ✅ STORE USER ID HERE
         localStorage.setItem("userId", res.user._id);
-        
-        alert("Login successful");
+
+        // alert("Login successful");
+        toast.success("Login successful", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       } else {
-        alert(res.message);
+        // alert(res.message);
+        toast.error("Login failed", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       }
       navigate("/");
       // alert(res.message);

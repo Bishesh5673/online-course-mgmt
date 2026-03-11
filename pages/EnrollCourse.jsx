@@ -1,10 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Bounce, toast } from "react-toastify";
 
 const baseUrl = "http://127.0.0.1:9000/api/enroll";
 
 function EnrollCourse() {
-
   const { state } = useLocation();
   const navigate = useNavigate();
 
@@ -18,7 +18,18 @@ function EnrollCourse() {
   }
 
   if (!userId) {
-    alert("Please login first");
+    // alert("Please login first");
+    toast.error("Please login first", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
     navigate("/login");
     return null;
   }
@@ -33,7 +44,7 @@ function EnrollCourse() {
     e.preventDefault();
 
     try {
-      let res = await fetch(`${baseUrl}/createEnroll`, {  
+      let res = await fetch(`${baseUrl}/createEnroll`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,31 +54,40 @@ function EnrollCourse() {
           email,
           phone,
           courseId,
-          userId
+          userId,
         }),
       });
 
       res = await res.json();
 
-      if(res.success){
-        alert(res.message);
+      if (res.success) {
+        // alert(res.message);
         navigate("/payment", {
-  state: {
-    courseId,
-    title,
-    price,
-    userId,
-    name,
-    email,
-    phone,
-    transactionId: Date.now()
-  }
-});
-
+          state: {
+            courseId,
+            title,
+            price,
+            userId,
+            name,
+            email,
+            phone,
+            transactionId: Date.now(),
+          },
+        });
       } else {
-        alert(res.message || "Enrollment failed");
+        // alert(res.message || "Enrollment failed");
+        toast.error("You are already enrolled in this course", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       }
-
     } catch (error) {
       console.log(error);
       alert("Enrollment failed. Check console for details.");
@@ -76,12 +96,9 @@ function EnrollCourse() {
 
   return (
     <main className="min-h-screen bg-gray-100 flex justify-center items-center p-8">
-
       <div className="bg-white shadow-2xl rounded-3xl overflow-hidden max-w-5xl w-full grid md:grid-cols-2">
-
         {/* Course Info Section */}
         <div className="bg-gray-50 p-8 flex flex-col justify-center items-center text-center">
-
           <img
             src={`http://127.0.0.1:9000/image/${image}`}
             alt={title}
@@ -94,18 +111,11 @@ function EnrollCourse() {
             Secure your seat in this course today.
           </p>
 
-          <p className="text-xl font-semibold text-green-600">
-            Rs. {price}
-          </p>
-
+          <p className="text-xl font-semibold text-green-600">Rs. {price}</p>
         </div>
 
         {/* Enrollment Form */}
-        <form
-          onSubmit={enrollCourse}
-          className="p-10 space-y-6"
-        >
-
+        <form onSubmit={enrollCourse} className="p-10 space-y-6">
           <h2 className="text-2xl font-bold text-center mb-4">
             Enrollment Details
           </h2>
@@ -143,16 +153,11 @@ function EnrollCourse() {
             />
           </div>
 
-          <button
-            className="w-full bg-black text-white py-3 rounded-xl text-lg font-semibold hover:bg-gray-800 transition duration-200 shadow-md"
-          >
+          <button className="w-full bg-black text-white py-3 rounded-xl text-lg font-semibold hover:bg-gray-800 transition duration-200 shadow-md">
             Confirm Enrollment
           </button>
-
         </form>
-
       </div>
-
     </main>
   );
 }

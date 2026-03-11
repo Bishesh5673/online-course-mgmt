@@ -1,11 +1,12 @@
 import React from "react";
-import { FaAward, FaLaptop, FaVideo } from "react-icons/fa6";
+import { FaAward, FaLaptop, FaPlay, FaVideo } from "react-icons/fa6";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function CourseDetail() {
   const { state } = useLocation();
   const navigate = useNavigate();
-  const { title, description, image, level, price, date, _id } = state;
+  const { title, description, image, level, price, date, demoVideo, _id } =
+    state;
 
   return (
     <main className="bg-gray-50 min-h-screen  px-6 md:px-20 py-16">
@@ -61,6 +62,18 @@ function CourseDetail() {
             >
               Enroll Now
             </button>
+
+            {demoVideo && (
+              <a
+                href={demoVideo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-400 text-white px-6 py-3 rounded-xl text-lg font-semibold"
+              >
+                <FaPlay />
+                Watch Demo
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -73,36 +86,30 @@ function CourseDetail() {
           All-inclusive support — from training to real-world experience{" "}
         </p>
         <div className="grid md:grid-cols-3 gap-10 pt-5 max-w-7xl mx-auto">
+          {/* Card 1 */}
+          <div className="bg-gray-200 p-10  rounded-3xl shadow-md hover:shadow-xl transition">
+            <FaLaptop className="text-orange-500 mb-6" size={45} />
+            <h3 className="text-2xl font-bold mb-2">Live Classes</h3>
+            <p className="text-gray-600 text-lg">
+              Google Meet <br />
+              7:00 PM - 8:00 PM
+            </p>
+          </div>
 
-        {/* Card 1 */}
-        <div className="bg-gray-200 p-10  rounded-3xl shadow-md hover:shadow-xl transition">
-          <FaLaptop className="text-orange-500 mb-6" size={45} />
-          <h3 className="text-2xl font-bold mb-2">Live Classes</h3>
-          <p className="text-gray-600 text-lg">
-            Google Meet <br />
-            7:00 PM - 8:00 PM
-          </p>
+          {/* Card 2 */}
+          <div className="bg-gray-200 p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+            <FaVideo className="text-orange-500 mb-6" size={45} />
+            <h3 className="text-2xl font-bold mb-2">Lifetime Videos</h3>
+            <p className="text-gray-600 text-lg">Re-watch anytime</p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-gray-200 p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+            <FaAward className="text-orange-500 mb-6" size={45} />
+            <h3 className="text-2xl font-bold mb-2">Certification</h3>
+            <p className="text-gray-600 text-lg">Industry recognized</p>
+          </div>
         </div>
-
-        {/* Card 2 */}
-        <div className="bg-gray-200 p-10 rounded-3xl shadow-md hover:shadow-xl transition">
-          <FaVideo className="text-orange-500 mb-6" size={45} />
-          <h3 className="text-2xl font-bold mb-2">Lifetime Videos</h3>
-          <p className="text-gray-600 text-lg">
-            Re-watch anytime
-          </p>
-        </div>
-
-        {/* Card 3 */}
-        <div className="bg-gray-200 p-10 rounded-3xl shadow-md hover:shadow-xl transition">
-          <FaAward className="text-orange-500 mb-6" size={45} />
-          <h3 className="text-2xl font-bold mb-2">Certification</h3>
-          <p className="text-gray-600 text-lg">
-            Industry recognized
-          </p>
-        </div>
-
-      </div>
       </div>
     </main>
   );

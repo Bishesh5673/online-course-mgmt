@@ -163,7 +163,7 @@ function AboutUs() {
 
       {/* CTA */}
 
-      <section className="bg-orange-600 text-white text-center py-20 px-6">
+      <section className="bg-green-600 text-white text-center py-20 px-6">
 
         <h2 className="text-4xl font-bold mb-6">
           Start Learning Today
@@ -175,7 +175,7 @@ function AboutUs() {
 
         <button
           onClick={() => navigate("/courses")}
-          className="bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
+          className="bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
         >
           Browse Courses
         </button>

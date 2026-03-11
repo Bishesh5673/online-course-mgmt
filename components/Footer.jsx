@@ -32,7 +32,7 @@ function Footer() {
           <h5 className="text-[#0C6967] text-[20px] font-bold">Quick Links</h5>
           <div className="links flex flex-col justify-start mt-3 text-[15px] text-[#6B788E]  gap-y-2 ">
             <NavLink to="/courses">All Courses</NavLink>
-            <NavLink to="/dashboard">Dashboard</NavLink>
+            <NavLink to="/testimonials">Testimonials</NavLink>
             <NavLink to="/aboutUs">About Us</NavLink>
             <NavLink to="/contact">Contact Us</NavLink>
           </div>

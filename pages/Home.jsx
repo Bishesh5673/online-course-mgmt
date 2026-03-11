@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 const baseUrl = "http://localhost:9000/api/course";
 import { FaGraduationCap, FaHeadset, FaVideo } from "react-icons/fa";
 import { GiRibbonMedal } from "react-icons/gi";
+import Hero from "../components/Hero";
 
 function Home() {
   const navigate = useNavigate();
@@ -31,29 +32,7 @@ function Home() {
   <main className="font-sans">
 
     {/* HERO SECTION */}
-    <section className="bg-gradient-to-r from-green-500 to-emerald-600  py-20 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
-      
-      <div className="max-w-xl space-y-6 text-white">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-          Nepal's Most Affordable IT Training
-        </h1>
-        <p className="text-lg md:text-xl text-gray-100">
-          Learn from industry experts through live sessions or recorded videos
-          with lifetime access, internship, and job interview preparation.
-        </p>
-        <button className="bg-black hover:bg-gray-900 transition px-8 py-3 rounded-xl text-lg font-semibold shadow-lg">
-          Enroll Now
-        </button>
-      </div>
-
-      <div>
-        <img
-          src="https://codeit.com.np/storage/01KD627JZZ3XY67DDAAYY0RPMQ.avif"
-          className="rounded-3xl shadow-2xl w-full mt-10 max-w-md"
-          alt="Training"
-        />
-      </div>
-    </section>
+    <Hero/>
 
     {/* FEATURES SECTION */}
     <section className="py-20 px-6 md:px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">

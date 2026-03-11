@@ -206,7 +206,7 @@ function Testimonials() {
 
         <button
           onClick={() => navigate("/courses")}
-          className="bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
+          className="bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
         >
           Browse Courses
         </button>
