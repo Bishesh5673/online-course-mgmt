@@ -1,12 +1,31 @@
 import React from "react";
 import { FaAward, FaLaptop, FaPlay, FaVideo } from "react-icons/fa6";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthProvider";
+
 
 function CourseDetail() {
   const { state } = useLocation();
   const navigate = useNavigate();
+    const { state: authState } = useContext(AuthContext);
+
   const { title, description, image, level, price, date, demoVideo, _id } =
     state;
+
+  const handleEnroll = () => {
+    const userId = localStorage.getItem("userId");
+
+  if (!authState?.user) {
+      toast.error("Please login to enroll in this course");
+      navigate("/login");
+    } else {
+      navigate("/enroll", {
+        state: { courseId: _id, title, price, image },
+      });
+    }
+  };
 
   return (
     <main className="bg-gray-50 min-h-screen  px-6 md:px-20 py-16">
@@ -53,11 +72,7 @@ function CourseDetail() {
             </div>
 
             <button
-              onClick={() =>
-                navigate("/enroll", {
-                  state: { courseId: _id, title, price, image },
-                })
-              }
+              onClick={handleEnroll}
               className="w-full bg-black text-white py-3 rounded-xl text-lg hover:bg-gray-800 transition mt-4"
             >
               Enroll Now
